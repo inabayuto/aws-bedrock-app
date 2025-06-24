@@ -88,3 +88,4 @@ python main.py
 
 - <https://qiita.com/icoxfog417/items/869e2093e672b2b8a139>
 - <https://qiita.com/minorun365/items/33d063bc62bbca1824a9>
+- <https://zenn.dev/akkie1030/articles/aws-cli-setup-tutorial>
