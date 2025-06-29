@@ -1,25 +1,15 @@
-import boto3
-import json
+import streamlit as st
+from app.streamlit_app import get_bedrock_response
+from app.prompt_response import get_response_with_prompt
 
+# if __name__ == "__main__":
+#     print(get_response_with_prompt("カレーの作り方を教えてください。"))
 
-brt = boto3.client(
-    service_name='bedrock-runtime', 
-    region_name='us-east-1')
+st.title("AWS Bedrockのデモアプリ")
 
-body = json.dumps({
-    "prompt": "\n\n Human: カレーの作り方を教えてください。\n\nAssistant:",
-    "max_tokens_to_sample": 300,
-    "temperature": 0.1,
-    "top_p": 0.9,
-})
+user_input = st.text_input("メッセージを入力してください")
 
-modelId = 'anthropic.claude-instant-v1'
-accept = 'application/json'
-contentType = 'application/json'
-
-response = brt.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
-
-response_body = json.loads(response.get('body').read())
-
-# text
-print(response_body.get('completion'))
+if st.button("送信"):
+    result = get_bedrock_response(user_input)
+    if result:
+        st.write(result)

@@ -42,7 +42,7 @@ docker compose up -d
 
 ### 7. コンテナに入って作業
 ```sh
-docker compose exec -it Container ID bash
+docker exec -it aws-bedrock-app-bedrock-1 bash
 ```
 
 ### 8. サンプルスクリプトの実行
@@ -89,3 +89,4 @@ python main.py
 - <https://qiita.com/icoxfog417/items/869e2093e672b2b8a139>
 - <https://qiita.com/minorun365/items/33d063bc62bbca1824a9>
 - <https://zenn.dev/akkie1030/articles/aws-cli-setup-tutorial>
+- <https://zenn.dev/ibaraki/articles/4189b05c7abd6c>

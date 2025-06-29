@@ -8,3 +8,5 @@ services:
       - ~/.aws:/root/.aws:ro
       - ./:/app
     command: tail -f /dev/null
+    ports:
+      - "8501:8501"
